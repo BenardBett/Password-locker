@@ -23,3 +23,9 @@ from user import user
         function that finds a user
         '''
         return User.find_by_username( username)
+    
+    def check_existing_users(username):
+        '''
+        function that checks if a user exist
+        '''
+        return User.user_exist(username)
