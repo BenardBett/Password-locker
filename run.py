@@ -18,3 +18,8 @@ from user import user
         '''
         User.delete_user() 
         
+    def find_user(username):
+        '''
+        function that finds a user
+        '''
+        return User.find_by_username( username)
