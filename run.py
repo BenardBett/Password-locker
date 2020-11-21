@@ -6,5 +6,10 @@ from user import user
         new_user= User(username,password)
         return new_user
     
-   
+   def save_user(user):
+        '''
+        function to save new user
+        '''
+        User.save_user()
+        
         
