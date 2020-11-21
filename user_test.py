@@ -94,6 +94,12 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credential.credential_list),1)
+        
+    def delete_credential(self):
+        '''
+        delete_credential method deletes a saved credential from the credential_list
+        '''
+        Credential.credential_list.remove(self)
 
 
 
