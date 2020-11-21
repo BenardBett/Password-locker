@@ -110,6 +110,19 @@ class TestCredentials(unittest.TestCase):
         test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
         test_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),2)
+        
+        
+        def test_delete_credential(self):
+            '''
+            test_delete_credential to test if we can delete a credential from credential list
+            '''
+            self.new_credential.save_credential()
+            test_credential = Credential("twitter","kiplangatbett","Ben34512177") # new credential
+            test_credential.save_credential()
+
+            self.new_credential.delete_credential()# Deleting a credential object
+            self.assertEqual(len(Credential.credential_list),1)
+
 
 
 
