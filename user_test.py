@@ -1,6 +1,6 @@
 import unittest # Importing the unittest module
 from user import User # Importing the User class
-from password import Credentials
+from credential import Credential
 class TestUser(unittest.TestCase):
 
     '''
@@ -59,6 +59,43 @@ class TestUser(unittest.TestCase):
 
             self.new_user.delete_user()# Deleting a user object
             self.assertEqual(len(User.user_list),1)
+            
+            
+
+            
+class TestCredentials(unittest.TestCase):        
+    '''
+    Test class that defines test cases for the user class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
+    '''      
+            
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_credential = Credential("twitter", "kiplangatbett","Ben34512177")
+            
+     
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_credential.account,"twitter")
+        self.assertEqual(self.new_credential.username,"kiplangatbett")
+        self.assertEqual(self.new_credential.password,"Ben34512177")    
+            
+    def test_save_credential(self):
+        '''
+        test_save_credential test case to test if the credential object is saved into
+         the  credential list
+        '''
+        self.new_credential.save_credential() # saving the new credential
+        self.assertEqual(len(Credential.credential_list),1)
+
+
 
 
 if __name__ == '__main__':

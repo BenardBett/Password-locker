@@ -1,15 +1,15 @@
-class Credentials:
+class Credential:
     """
     Class that generates new instances of credentials.
     """
 
-    credentials_list = [] # Empty credential list
+    credential_list = [] # Empty credential list
 
-    def __init__(self,username,password,account):
+    def __init__(self,account,username,password):
+        self.account= account   
         self.username = username
         self.password= password
-        self.account= account
-            
+       
     def save_credential(self):
         '''
         method that saves credential objects into application
