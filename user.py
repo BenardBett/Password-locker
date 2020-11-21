@@ -13,4 +13,5 @@ class User:
         '''
         save new user to the application
         '''
-        user.user_list.append(self)
+        User.user_list.append(self)
+        
