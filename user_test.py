@@ -95,11 +95,11 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credential.credential_list),1)
         
-    def delete_credential(self):
+    def tearDown(self):
         '''
-        delete_credential method deletes a saved credential from the credential_list
+        tearDown method that does clean up after each test case has run.
         '''
-        Credential.credential_list.remove(self)
+        Credential.credential_list = []  
 
 
 
