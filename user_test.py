@@ -1,6 +1,6 @@
 import unittest # Importing the unittest module
 from user import User # Importing the User class
-
+from password import Credentials
 class TestUser(unittest.TestCase):
 
     '''
