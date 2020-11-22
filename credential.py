@@ -5,11 +5,13 @@ class Credential:
 
     credential_list = [] # Empty credential list
 
-    def __init__(self,account,username,password):
-        self.account= account   
+  
+    def __init__(self, name, account, username, password):
+        self.name = name
+        self.account = account
         self.username = username
-        self.password= password
-       
+        self.password = password    
+
     def save_credential(self):
         '''
         method that saves credential objects into application
