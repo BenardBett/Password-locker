@@ -1,3 +1,6 @@
+import random
+import string
+import pyperclip
 class Credential:
     """
     Class that generates new instances of credentials.
@@ -6,12 +9,14 @@ class Credential:
     credential_list = [] # Empty credential list
 
   
-    def __init__(self, name, account, username, password):
-        self.name = name
+    def __init__(self,account,username, password):
+        """
+        method that defines user credential to be stored
+        """
         self.account = account
         self.username = username
-        self.password = password    
-
+        self.password = password
+        
     def save_credential(self):
         '''
         method that saves credential objects into application
@@ -28,18 +33,13 @@ class Credential:
         
         
     @classmethod
-    def find_by_username(cls,username):
-        '''
-        Method that takes in a username and returns a credential that matches that username.
-        Args:
-            username:  username to search for
-        Returns :
-            Credential that matches the username.
-        '''
-
+    def find_credential(cls, account):
+        """
+        Method that takes in a account_name and returns a credential that matches that account_name.
+        """
         for credential in cls.credential_list:
-            if credential.username == username:
-                return credential 
+            if credential.account == account:
+                return credential
             
     @classmethod
     def credential_exist(cls,name):
@@ -58,8 +58,14 @@ class Credential:
  
  
     @classmethod
-    def display_credentials(cls):
+    def display_credential(cls):
         '''
         method that returns the credential list
         '''
         return cls.credential_list 
+    
+    
+    # def generatePassword(stringLength=8):
+    #     """Generate a random password string of letters and digits and special characters"""
+    #     password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+    #     return ''.join(random.choice(password) for i in range(stringLength))
